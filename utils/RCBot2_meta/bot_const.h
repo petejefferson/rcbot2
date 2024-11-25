@@ -135,6 +135,7 @@ extern const char *g_szLookTaskToString[LOOK_MAX];
 #define BOT_ACCESS_CLIENT_FILE "accessclients"
 #define BOT_PROFILE_FOLDER "profiles"
 #define BOT_WAYPOINT_FOLDER "waypoints"
+#define BOT_WAYPOINT_FOLDER_DYN "waypoints/dyn"
 #define BOT_CONFIG_EXTENSION "ini"
 
 #define BOT_WAYPOINT_EXTENSION "rcw" // extension for waypoint files

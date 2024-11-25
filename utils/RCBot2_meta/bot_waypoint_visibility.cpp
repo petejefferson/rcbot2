@@ -158,7 +158,7 @@ bool CWaypointVisibilityTable::SaveToFile() const
 	char filename[1024];
 	wpt_vis_header_t header;
 
-	CBotGlobals::buildFileName(filename, CBotGlobals::getMapName(), BOT_WAYPOINT_FOLDER, "rcv", true);
+	CBotGlobals::buildFileName(filename, CBotGlobals::getMapName(), BOT_WAYPOINT_FOLDER_DYN, "rcv", true);
 
 	std::fstream bfp = CBotGlobals::openFile(filename, std::fstream::out | std::fstream::binary);
 
@@ -184,7 +184,7 @@ bool CWaypointVisibilityTable::ReadFromFile(int numwaypoints) const
 
 	wpt_vis_header_t header;
 
-	CBotGlobals::buildFileName(filename, CBotGlobals::getMapName(), BOT_WAYPOINT_FOLDER, "rcv", true);
+	CBotGlobals::buildFileName(filename, CBotGlobals::getMapName(), BOT_WAYPOINT_FOLDER_DYN, "rcv", true);
 
 	std::fstream bfp = CBotGlobals::openFile(filename, std::fstream::in | std::fstream::binary);
 

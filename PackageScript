@@ -14,6 +14,7 @@ folder_list = [
   # 'addons/rcbot2/manual',
   'addons/rcbot2/profiles',
   'addons/rcbot2/waypoints',
+  'addons/rcbot2/waypoints/dyn',
 ]
 
 # Create the distribution folder hierarchy.
