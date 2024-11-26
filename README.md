@@ -94,9 +94,6 @@ passing in `--depth 1` or a few to avoid retrieving the files that were removed 
 	- `$ python3 ../configure.py -s dods --hl2sdk-root $HOME/alliedmodders/ --mms-path $HOME/alliedmodders/mmsource-1.12/ --sm-path=$HOME/alliedmodders/sourcemod/`  (*)
 	- `$ ~/.local/bin/ambuild`
 
-(*) Replace the mod (dods) as desired. e.g. for tf2:
-`$ python3 ../configure.py -s tf2 $HOME/alliedmodders/ --mms-path $HOME/alliedmodders/mmsource-1.12/ --sm-path=$HOME/alliedmodders/sourcemod/`
-
 MetaMod:Source plugin is built and the base install files will be available in `build/package`.
 
 
