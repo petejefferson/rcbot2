@@ -18,9 +18,7 @@ you need support for this particular project.
 This fork concentrates on Linux dedicated servers and Day of Defeat: Source running in Docker.
 
 - Dynamic bot files  (.rcv, .rcd) are stored in a /dyn folder.
-- Build instructions updated for Ubuntu 24 
-
-
+- Build instructions updated for Ubuntu
 - Build process uses [AMBuild][] instead of `make` or Visual Studio.  This removes the need for
 Valve's cross platform make conversion tool and keeping copies of modified Source SDK files.
 - The plugin has been split into SDK-specific builds to ensure proper compatibility, using the
@@ -69,19 +67,38 @@ RCBot2's repo history had all sorts of build artifacts / binaries at various poi
 pulling the repository down normally takes an unusually long while.  I'd highly recommend
 passing in `--depth 1` or a few to avoid retrieving the files that were removed since then.
 
-### Compiling on Windows / Linux
+### Compiling on Linux
+(tested on Ubuntu 24.04.01 LTS)
 
-1. [Install the prerequisites for building SourceMod for your OS.][Building SourceMod]
-2. Create a `build/` subdirectory, then run `configure.py`.
-	- Use the following options (where `${MOD}` is only TF2):
-	`python ../configure.py -s ${MOD} --mms_path ${MMS_PATH} --hl2sdk-root ${HL2SDK_ROOT}`
-	- Specifying an `--sm-path` argument enables linking to SourceMod.
-	- Note that the automatic versioning system requires an installation of `git` and a
-	relatively modern version of Python 3. Python version 2 is now depreciated.
-3. Run `ambuild`.  MetaMod:Source plugin is built and the base install files will be available
-in `build/package`.
+1. Prerequisites:
+	- `$ sudo apt install -y python3-pip clang gcc-multilib g++-multilib`
+	
+2. Install AMBuild:
+	- `$ cd ~`
+	- `$ git clone https://github.com/alliedmodders/ambuild`
+	- `$ pip install --break-system-packages ./ambuild`
 
-[Building SourceMod]: https://wiki.alliedmods.net/Building_SourceMod
+3. Get hl2sdks:
+	- `$ cd ~`
+	- `$ mkdir alliedmodders`
+	- `cd alliedmodders`
+	- `git clone --recursive https://github.com/alliedmodders/sourcemod`
+	- `bash sourcemod/tools/checkout-deps.sh`
+
+4. Build RCBot2:
+	- `$ cd ~`
+	- `$ git clone https://github.com/petejefferson/rcbot2.git`
+	- `$ cd rcbot2`
+	- `$ mkdir build`
+	- `$ cd build`
+	- `$ python3 ../configure.py -s dods --hl2sdk-root $HOME/alliedmodders/ --mms-path $HOME/alliedmodders/mmsource-1.12/ --sm-path=$HOME/alliedmodders/sourcemod/`  (*)
+	- `$ ~/.local/bin/ambuild`
+
+(*) Replace the mod (dods) as desired. e.g. for tf2:
+`$ python3 ../configure.py -s tf2 $HOME/alliedmodders/ --mms-path $HOME/alliedmodders/mmsource-1.12/ --sm-path=$HOME/alliedmodders/sourcemod/`
+
+MetaMod:Source plugin is built and the base install files will be available in `build/package`.
+
 
 ## License:-
 
