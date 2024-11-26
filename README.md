@@ -15,7 +15,7 @@ you need support for this particular project.
 
 ## Changes from upstream:-
 
-This fork concentrates on Linux dedicated servers and Day of Defeat: Source running in Docker.
+**This fork concentrates on Linux dedicated servers and Day of Defeat: Source running in Docker.**
 
 - Dynamic bot files  (.rcv, .rcd) are stored in a /dyn folder.
 - Build instructions updated for Ubuntu
