@@ -15,6 +15,12 @@ you need support for this particular project.
 
 ## Changes from upstream:-
 
+This fork concentrates on Linux dedicated servers and Day of Defeat: Source running in Docker.
+
+- Dynamic bot files  (.rcv, .rcd) are stored in a /dyn folder.
+- Build instructions updated for Ubuntu 24 
+
+
 - Build process uses [AMBuild][] instead of `make` or Visual Studio.  This removes the need for
 Valve's cross platform make conversion tool and keeping copies of modified Source SDK files.
 - The plugin has been split into SDK-specific builds to ensure proper compatibility, using the
